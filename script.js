@@ -1,60 +1,152 @@
-const translations = {
-  tr: {
-    skip: "İçeriğe geç", navWidgets: "Widget'lar", navPrivacy: "Gizlilik", navQuestions: "Sorular",
-    eyebrow: "iPhone ve iPad için", heroTitle: "Büyürken geçen zamanı, ana ekranınızda görün.", heroLead: "Moonth, bebeğinizin takvimsel yaşını doğru hesaplar; ana ekran, kilit ekranı ve StandBy widget'larında sakin ve anlaşılır biçimde gösterir.",
-    downloadLabel: "App Store'da", downloadText: "Yakında", explore: "Widget'ları keşfet", trustPrivate: "Hesap gerektirmez", trustIos: "iOS 16 ve üzeri",
-    noteAge: "Bugün", sampleAge: "20 ay 18 gün", sampleAgeCompact: "AY 18 GÜN", year: "YIL", monthTwentyOne: "21. AY", marqueeHome: "ANA EKRAN", marqueeLock: "KİLİT EKRANI", marqueeThemes: "18 WIDGET TEMASI", greeting: "Merhaba", ageLabel: "Bugünkü yaşı", months: "ay", days: "gün", selectedWidget: "Seçili widget", edit: "Düzenle", nextMilestone: "Sonraki dönüm noktası", nextMilestoneValue: "13 gün kaldı",
-    widgetsEyebrow: "Her bakışta yanında", widgetsTitle: "Yaşını hesaplamak yerine, anı yaşamaya devam edin.", widgetsLead: "Ay sonları, artık yıllar ve doğum saati Moonth'un işi. Siz yalnızca size uygun görünümü seçin.",
-    themeNotebook: "Net Yaş", themeNotebookDesc: "Bebeğinin yaşını ve sıradaki ayı tek bakışta gösterir.", themeNight: "İlk Yıl Yıldızları", themeNightDesc: "İlk yılın her ayını küçük bir yıldızla saklar.", themeMilestone: "Kilometre Taşı", themeMilestoneDesc: "Bir sonraki aya kalan zamanı net gösterir.", daysLeft: "GÜN KALDI",
-    featureThemes: "Farklı tema", featureThemesDesc: "Ana ekran, kilit ekranı ve StandBy için.", featureFormats: "Yaş formatı", featureFormatsDesc: "Ay + gün, hafta + gün veya yıl + ay + gün.", featureMoments: "Her gün güncel", featureMomentsDesc: "Widget'lar yaş bilgisini kendileri yeniler.",
-    privacyTitle: "Ailenizin bilgisi, ailenizde kalır.", privacyLead: "Moonth hesap açmanızı istemez. Bebeğinizin adı, doğum tarihi ve widget tercihleriniz cihazınızda tutulur; reklam veya çapraz uygulama takibi yapılmaz.", readPrivacy: "Gizlilik politikasını okuyun", privacyNoAccount: "Hesap yok", privacyNoAccountDesc: "E-posta, parola veya profil oluşturmanız gerekmez.", privacyLocal: "Yerel saklama", privacyLocalDesc: "Aile bilgileri Moonth sunucularına yüklenmez.", privacyNoAds: "Reklam yok", privacyNoAdsDesc: "Üçüncü taraf reklam ve davranış takibi bulunmaz.",
-    proEyebrow: "Tek seferlik satın alım", proTitle: "Sevdiğiniz görünümü bir kez açın, hep kullanın.", proLead: "Moonth Pro; tüm Pro widget temalarını, tüm yaş formatlarını ve birden fazla bebek desteğini tek ödemeyle açar. Abonelik yoktur.", proItem1: "15 Pro widget teması", proItem2: "Birden fazla bebek profili", proItem3: "Tüm yaş gösterim biçimleri", comingSoon: "App Store'da yakında", comingSoonDesc: "Moonth şu anda yayına hazırlanıyor.",
-    faqTitle: "Kısa cevaplar.", faqOneQ: "Moonth yaş hesabını nasıl yapıyor?", faqOneA: "Takvim aylarını esas alır; ay sonu ve artık yıl gibi durumları otomatik olarak doğru biçimde ele alır.", faqTwoQ: "Widget'lar internet olmadan çalışır mı?", faqTwoA: "Evet. Yaş bilgisi cihazınızda hesaplanır ve widget tarafından düzenli olarak güncellenir.", faqThreeQ: "Moonth Pro abonelik mi?", faqThreeA: "Hayır. Moonth Pro tek seferlik, yenilenmeyen bir uygulama içi satın alımdır.",
-    footerTagline: "Bebeğinizin yaşı, her an yanınızda.", footerPrivacy: "Gizlilik", footerTerms: "Kullanım Koşulları", backTop: "Başa dön"
-  },
-  en: {
-    skip: "Skip to content", navWidgets: "Widgets", navPrivacy: "Privacy", navQuestions: "Questions",
-    eyebrow: "For iPhone and iPad", heroTitle: "See the time they grow, right on your Home Screen.", heroLead: "Moonth calculates your baby's calendar age accurately and shows it clearly across Home Screen, Lock Screen, and StandBy widgets.",
-    downloadLabel: "Coming soon on the", downloadText: "App Store", explore: "Explore the widgets", trustPrivate: "No account required", trustIos: "iOS 16 and later",
-    noteAge: "Today", sampleAge: "20 months 18 days", sampleAgeCompact: "MONTHS 18 DAYS", year: "YEAR", monthTwentyOne: "MONTH 21", marqueeHome: "HOME SCREEN", marqueeLock: "LOCK SCREEN", marqueeThemes: "18 WIDGET THEMES", greeting: "Hello", ageLabel: "Age today", months: "months", days: "days", selectedWidget: "Selected widget", edit: "Edit", nextMilestone: "Next milestone", nextMilestoneValue: "13 days to go",
-    widgetsEyebrow: "There at a glance", widgetsTitle: "Stop calculating their age. Keep living the moment.", widgetsLead: "Month ends, leap years, and birth time are Moonth's job. You only choose the view that feels like yours.",
-    themeNotebook: "Clear Age", themeNotebookDesc: "Shows your baby's age and next month at a glance.", themeNight: "First-Year Stars", themeNightDesc: "Keeps every month of the first year as a small star.", themeMilestone: "Milestone", themeMilestoneDesc: "Shows the time left until the next month at a glance.", daysLeft: "DAYS TO GO",
-    featureThemes: "Distinct themes", featureThemesDesc: "For Home Screen, Lock Screen, and StandBy.", featureFormats: "Age formats", featureFormatsDesc: "Months + days, weeks + days, or years + months + days.", featureMoments: "Always current", featureMomentsDesc: "Widgets refresh the age automatically.",
-    privacyTitle: "Your family's information stays with your family.", privacyLead: "Moonth never asks you to create an account. Your baby's name, birth date, and widget preferences stay on your device, with no advertising or cross-app tracking.", readPrivacy: "Read the Privacy Policy", privacyNoAccount: "No account", privacyNoAccountDesc: "No email, password, or profile is required.", privacyLocal: "Stored locally", privacyLocalDesc: "Family information is not uploaded to Moonth servers.", privacyNoAds: "No ads", privacyNoAdsDesc: "There is no third-party advertising or behavioral tracking.",
-    proEyebrow: "One-time purchase", proTitle: "Unlock the look you love once. Keep it forever.", proLead: "Moonth Pro unlocks every Pro widget theme, every age format, and support for multiple babies with one payment. There is no subscription.", proItem1: "15 Pro widget themes", proItem2: "Multiple baby profiles", proItem3: "Every age display format", comingSoon: "Coming soon on the App Store", comingSoonDesc: "Moonth is currently preparing for release.",
-    faqTitle: "Short answers.", faqOneQ: "How does Moonth calculate age?", faqOneA: "It follows calendar months and automatically handles month ends and leap years correctly.", faqTwoQ: "Do widgets work without the internet?", faqTwoA: "Yes. Age is calculated on your device and refreshed regularly by the widget.", faqThreeQ: "Is Moonth Pro a subscription?", faqThreeA: "No. Moonth Pro is a one-time, non-renewing in-app purchase.",
-    footerTagline: "Your baby's age, always close.", footerPrivacy: "Privacy", footerTerms: "Terms of Use", backTop: "Back to top"
-  }
-};
+/**
+ * Moonth — Baby Age Calculator & Interactive Scripts
+ * Accurate calendar month calculation with short-month clamping & leap year support.
+ */
 
-function setLanguage(language) {
-  const copy = translations[language] || translations.tr;
-  document.documentElement.lang = language;
-  document.querySelectorAll("[data-i18n]").forEach((element) => {
-    const value = copy[element.dataset.i18n];
-    if (value) element.textContent = value;
-  });
-  document.querySelectorAll(".language-button").forEach((button) => {
-    const selected = button.dataset.language === language;
-    button.classList.toggle("is-active", selected);
-    button.setAttribute("aria-pressed", String(selected));
-  });
-  try { localStorage.setItem("moonth-language", language); } catch (_) {}
+// Helpers for calendar calculation
+function isLeapYear(year) {
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }
 
-document.querySelectorAll(".language-button").forEach((button) => {
-  button.addEventListener("click", () => setLanguage(button.dataset.language));
-});
+function getDaysInMonth(year, monthIndex) {
+  // monthIndex: 0-11
+  const days = [31, isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  return days[monthIndex];
+}
 
-const preferredLanguage = (() => {
-  try { return localStorage.getItem("moonth-language") || (navigator.language.toLowerCase().startsWith("tr") ? "tr" : "en"); }
-  catch (_) { return navigator.language.toLowerCase().startsWith("tr") ? "tr" : "en"; }
-})();
-setLanguage(preferredLanguage);
+/**
+ * Calculates completed calendar months and remaining days.
+ * Clamps to month-end when the birth day exceeds the month length (e.g. Jan 31 -> Feb 28).
+ */
+function calculateCalendarAge(birthDate, targetDate = new Date()) {
+  const bY = birthDate.getFullYear();
+  const bM = birthDate.getMonth(); // 0-11
+  const bD = birthDate.getDate();
 
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-if (reduceMotion || !("IntersectionObserver" in window)) {
-  document.querySelectorAll(".reveal").forEach((element) => element.classList.add("is-visible"));
+  const tY = targetDate.getFullYear();
+  const tM = targetDate.getMonth();
+  const tD = targetDate.getDate();
+
+  // Normalize midnight
+  const bTime = new Date(bY, bM, bD).getTime();
+  const tTime = new Date(tY, tM, tD).getTime();
+
+  if (bTime > tTime) {
+    return { isFuture: true };
+  }
+
+  // Calculate elapsed months
+  let months = (tY - bY) * 12 + (tM - bM);
+
+  // Check if current month anniversary has occurred
+  // Milestone date for this target month
+  const daysInCurrentMonth = getDaysInMonth(tY, tM);
+  const currentMonthAnniversaryDay = Math.min(bD, daysInCurrentMonth);
+
+  if (tD < currentMonthAnniversaryDay) {
+    months -= 1;
+  }
+
+  // Find the exact date of the latest month-iversary
+  const milestoneYear = bY + Math.floor((bM + months) / 12);
+  const milestoneMonth = (bM + months) % 12;
+  const milestoneDaysInMonth = getDaysInMonth(milestoneYear, milestoneMonth);
+  const milestoneDay = Math.min(bD, milestoneDaysInMonth);
+  const lastMilestoneDate = new Date(milestoneYear, milestoneMonth, milestoneDay);
+
+  // Remaining days since last milestone
+  const msDiff = tTime - lastMilestoneDate.getTime();
+  const days = Math.round(msDiff / (1000 * 60 * 60 * 24));
+
+  // Next milestone date
+  const nextMonths = months + 1;
+  const nextYear = bY + Math.floor((bM + nextMonths) / 12);
+  const nextMonth = (bM + nextMonths) % 12;
+  const nextDaysInMonth = getDaysInMonth(nextYear, nextMonth);
+  const nextMilestoneDay = Math.min(bD, nextDaysInMonth);
+  const nextMilestoneDate = new Date(nextYear, nextMonth, nextMilestoneDay);
+
+  const daysToNext = Math.round((nextMilestoneDate.getTime() - tTime) / (1000 * 60 * 60 * 24));
+
+  return {
+    isFuture: false,
+    months,
+    days,
+    daysToNext,
+    nextMonthNumber: nextMonths
+  };
+}
+
+// Format the calculated age for display
+function updateAgeDisplay() {
+  const input = document.getElementById("birth");
+  const bigOut = document.getElementById("calcBig");
+  const subOut = document.getElementById("calcSub");
+
+  if (!input || !bigOut || !subOut) return;
+
+  const rawValue = input.value;
+  if (!rawValue) {
+    bigOut.textContent = "—";
+    subOut.textContent = "Pick a birth date to see the age";
+    return;
+  }
+
+  // Parse YYYY-MM-DD safely
+  const [y, m, d] = rawValue.split("-").map(Number);
+  const birthDate = new Date(y, m - 1, d);
+  const result = calculateCalendarAge(birthDate);
+
+  if (result.isFuture) {
+    bigOut.textContent = "Future Date";
+    subOut.textContent = "Birth date cannot be in the future.";
+    return;
+  }
+
+  const { months, days, daysToNext, nextMonthNumber } = result;
+
+  const monthLabel = months === 1 ? "1 month" : `${months} months`;
+  const dayLabel = days === 1 ? "1 day" : `${days} days`;
+
+  if (months === 0 && days === 0) {
+    bigOut.textContent = "Born today!";
+    subOut.textContent = `Welcome to the world · 1 month milestone in ${daysToNext} days`;
+    return;
+  }
+
+  bigOut.textContent = `${monthLabel} ${dayLabel}`;
+
+  if (daysToNext === 0) {
+    subOut.textContent = `🎉 Today is the month ${months} celebration!`;
+  } else {
+    subOut.textContent = `Month ${nextMonthNumber} milestone in ${daysToNext} ${daysToNext === 1 ? "day" : "days"}`;
+  }
+}
+
+// Initialize Interactive Calculator
+const birthInput = document.getElementById("birth");
+if (birthInput) {
+  // Pre-fill with a date ~6 months and 15 days ago so the page has instant live preview
+  const defaultDate = new Date();
+  defaultDate.setMonth(defaultDate.getMonth() - 6);
+  defaultDate.setDate(defaultDate.getDate() - 15);
+  const yyyy = defaultDate.getFullYear();
+  const mm = String(defaultDate.getMonth() + 1).padStart(2, "0");
+  const dd = String(defaultDate.getDate()).padStart(2, "0");
+  birthInput.value = `${yyyy}-${mm}-${dd}`;
+  birthInput.max = new Date().toISOString().split("T")[0];
+
+  birthInput.addEventListener("input", updateAgeDisplay);
+  birthInput.addEventListener("change", updateAgeDisplay);
+  updateAgeDisplay();
+}
+
+// Intersection Observer for .reveal animations
+const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const reveals = document.querySelectorAll(".reveal");
+
+if (prefersReduced || !("IntersectionObserver" in window)) {
+  reveals.forEach((el) => el.classList.add("is-visible"));
 } else {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -63,8 +155,13 @@ if (reduceMotion || !("IntersectionObserver" in window)) {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.14, rootMargin: "0px 0px -40px" });
-  document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px" });
+
+  reveals.forEach((el) => observer.observe(el));
 }
 
-document.getElementById("year").textContent = String(new Date().getFullYear());
+// Footer Year
+const yearSpan = document.getElementById("year");
+if (yearSpan) {
+  yearSpan.textContent = String(new Date().getFullYear());
+}

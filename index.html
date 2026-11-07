@@ -1,198 +1,455 @@
 <!doctype html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f2e7">
-  <meta name="description" content="Moonth, bebeğinizin yaşını takvimsel olarak hesaplar ve ana ekran ile kilit ekranı widget'larında gösterir.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0B0F17" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F6F4EF" media="(prefers-color-scheme: light)">
+  <title>Moonth — Your baby's age, right on your Lock Screen</title>
+  <meta name="description" content="Moonth shows your baby's exact age in months and days on your iPhone Lock Screen and Home Screen. 18 widget designs, up to 5 kids, no account, all data stays on your device.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Moonth — Bebeğinizin yaşı, her an yanınızda">
-  <meta property="og:description" content="Takvimsel yaş, güzel widget'lar ve özel anlar. Hesap açmadan, verileriniz cihazınızda kalır.">
+  <meta property="og:title" content="Moonth — Your baby's age, at a glance">
+  <meta property="og:description" content="Lock Screen and Home Screen widgets that always know how old your baby is. No account. No tracking. Just glance.">
   <meta property="og:image" content="assets/app-icon.png">
-  <meta property="og:locale" content="tr_TR">
-  <title>Moonth — Baby Month Counter</title>
-  <link rel="icon" href="assets/app-icon.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="assets/app-icon-256.png">
   <link rel="apple-touch-icon" href="assets/app-icon.png">
-  <link rel="stylesheet" href="styles.css?v=3">
-  <script src="script.js?v=4" defer></script>
+  <link rel="preload" as="image" href="assets/lockscreen.webp" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css?v=10">
+  <script src="script.js?v=10" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main" data-i18n="skip">İçeriğe geç</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <nav class="nav-shell" aria-label="Ana menü">
-      <a class="brand" href="#top" aria-label="Moonth ana sayfa">
-        <img src="assets/app-icon.png" alt="" width="42" height="42">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#top">
+        <img src="assets/app-icon-256.png" alt="" width="36" height="36">
         <span>Moonth</span>
       </a>
-      <div class="nav-links">
-        <a href="#widgets" data-i18n="navWidgets">Widget'lar</a>
-        <a href="#privacy" data-i18n="navPrivacy">Gizlilik</a>
-        <a href="#questions" data-i18n="navQuestions">Sorular</a>
-      </div>
-      <div class="language-switch" role="group" aria-label="Dil seçimi">
-        <button class="language-button is-active" type="button" data-language="tr" aria-pressed="true">TR</button>
-        <button class="language-button" type="button" data-language="en" aria-pressed="false">EN</button>
-      </div>
+      <ul class="nav-links">
+        <li><a href="#lock-screen">Lock Screen</a></li>
+        <li><a href="#themes">Themes</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a class="nav-cta" href="#download">Get Moonth</a>
     </nav>
   </header>
 
   <main id="main">
+    <!-- HERO -->
     <section class="hero" id="top">
-      <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="eyebrow-mark"></span><span data-i18n="eyebrow">iPhone ve iPad için</span></div>
-        <h1 data-i18n="heroTitle">Büyürken geçen zamanı, ana ekranınızda görün.</h1>
-        <p class="hero-lead" data-i18n="heroLead">Moonth, bebeğinizin takvimsel yaşını doğru hesaplar; ana ekran, kilit ekranı ve StandBy widget'larında sakin ve anlaşılır biçimde gösterir.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#download">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15.2 5.4c.8-1 1.3-2.3 1.2-3.6-1.2.1-2.6.8-3.4 1.8-.7.8-1.3 2.1-1.2 3.3 1.3.1 2.6-.6 3.4-1.5ZM19.6 13.1c0-3.1 2.6-4.6 2.7-4.7-1.5-2.2-3.8-2.5-4.6-2.5-2-.2-3.8 1.1-4.8 1.1-1 0-2.5-1.1-4.1-1-2.1 0-4.1 1.2-5.2 3.1-2.2 3.8-.6 9.5 1.6 12.6 1.1 1.5 2.3 3.2 4 3.1 1.6-.1 2.2-1 4.2-1 1.9 0 2.5 1 4.2 1 1.7 0 2.8-1.5 3.9-3.1 1.2-1.8 1.7-3.5 1.7-3.6-.1 0-3.6-1.4-3.6-5Z"/></svg>
-            <span><small data-i18n="downloadLabel">App Store'da</small><strong data-i18n="downloadText">Yakında</strong></span>
-          </a>
-          <a class="text-link" href="#widgets"><span data-i18n="explore">Widget'ları keşfet</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></a>
-        </div>
-        <div class="trust-line" aria-label="Ürün özellikleri">
-          <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.8 2.9 8.3 7 10 4.1-1.7 7-5.2 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="trustPrivate">Hesap gerektirmez</span></span>
-          <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></svg><span data-i18n="trustIos">iOS 16 ve üzeri</span></span>
-        </div>
-      </div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Lock Screen &amp; Home Screen widgets for iPhone</p>
+          <h1>Your baby's age.<br><span class="accent">Always one glance away.</span></h1>
+          <p class="lead">“How old is he now?” — answered before you even unlock your phone. Moonth counts the exact months and days since birth and puts them right on your Lock Screen, next to the photo you love most.</p>
 
-      <div class="hero-visual reveal" aria-label="Moonth uygulama ve widget önizlemesi">
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-        <div class="floating-note note-top"><span data-i18n="noteAge">Bugün</span><strong data-i18n="sampleAge">20 ay 18 gün</strong></div>
-        <div class="phone" role="img" aria-label="Moonth uygulama ekranı">
-          <div class="phone-speaker"></div>
-          <div class="phone-screen">
-            <div class="phone-status"><span>9:41</span><span class="status-symbols"><i></i><i></i><i></i></span></div>
-            <div class="app-head"><div><span data-i18n="greeting">Merhaba</span><strong>Deniz</strong></div><div class="round-control"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M7 4v6M17 14v6"/></svg></div></div>
-            <div class="age-paper">
-              <span data-i18n="ageLabel">Bugünkü yaşı</span>
-              <strong>20 <em data-i18n="months">ay</em></strong>
-              <p>18 <span data-i18n="days">gün</span></p>
-              <svg class="paper-line" aria-hidden="true" viewBox="0 0 180 30"><path d="M3 20c30-15 50 7 78-4s49-8 96 1"/></svg>
+          <div class="hero-actions" id="download">
+            <a class="store-badge" href="#download" aria-label="Coming soon on the App Store">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.78.74 2.99.72 1.24-.02 2.02-1.12 2.77-2.23.88-1.28 1.24-2.52 1.26-2.59-.03-.01-2.4-.92-2.41-3.68ZM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28Z"/></svg>
+              <span><small>Coming soon on the</small><strong>App Store</strong></span>
+            </a>
+            <a class="ghost-link" href="#themes">See all 18 designs <span aria-hidden="true">→</span></a>
+          </div>
+
+          <ul class="trust" aria-label="Highlights">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.8 2.9 8.3 7 10 4.1-1.7 7-5.2 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>No account, no cloud</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg>iOS 16 and later</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-8-8"/><path d="M12 8v4l3 2"/></svg>Updates itself, every day</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-label="Moonth on the Lock Screen and the Home Screen">
+          <!-- Lock screen phone -->
+          <figure class="phone phone-lock">
+            <div class="screen">
+              <picture>
+                <source srcset="assets/lockscreen.webp" type="image/webp">
+                <img class="wallpaper" src="assets/lockscreen.jpg" alt="iPhone Lock Screen with a father holding his smiling baby; the Moonth widget reads 6 months 15 days, Noah" width="576" height="1024" fetchpriority="high">
+              </picture>
+              <div class="lock-widget" aria-hidden="true">
+                <span class="lw-num">6</span>
+                <span class="lw-text"><b>months 15 days</b><i>Noah</i></span>
+              </div>
             </div>
-            <div class="mini-title"><strong data-i18n="selectedWidget">Seçili widget</strong><span data-i18n="edit">Düzenle</span></div>
-            <div class="widget-preview">
-              <div class="star star-a"></div><div class="star star-b"></div><div class="star star-c"></div>
-              <span>DENİZ</span><strong>20</strong><p data-i18n="sampleAgeCompact"><b>AY</b> 18 GÜN</p>
+            <figcaption>Lock Screen</figcaption>
+          </figure>
+
+          <!-- Home screen phone -->
+          <figure class="phone phone-home">
+            <div class="screen home-screen">
+              <div class="home-bg" aria-hidden="true"></div>
+              <div class="status" aria-hidden="true"><span>22:40</span><span class="status-icons">●●● ▮</span></div>
+              <div class="w w-medium w-sketch" aria-hidden="true">
+                <div class="w-row"><span class="w-name">Noah</span><span class="w-tag">TODAY</span></div>
+                <div class="w-big">6 months 15 days</div>
+                <div class="w-rule"></div>
+                <div class="w-row w-foot"><span>to month 7</span><span class="amber">16 days left</span></div>
+              </div>
+              <p class="app-label" aria-hidden="true">Moonth</p>
+              <div class="icons" aria-hidden="true">
+                <i style="--c:#64748B"></i><i style="--c:#EC4899"></i><i style="--c:#EF4444"></i><i style="--c:#1E293B"></i>
+                <i style="--c:#F59E0B"></i><i style="--c:#10B981"></i><i style="--c:#E11D48"></i><i style="--c:#475569"></i>
+              </div>
+              <div class="w w-small w-bignum" aria-hidden="true">
+                <span class="bn">6</span><span class="bn-sub">mo 15 d</span><span class="bn-name">Noah</span>
+              </div>
+              <div class="dock" aria-hidden="true"><i style="--c:#22C55E"></i><i style="--c:#0EA5E9"></i><i style="--c:#10B981"></i><i style="--c:#F43F5E"></i></div>
+            </div>
+            <figcaption>Home Screen</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" aria-label="Moonth in numbers">
+      <div class="container stats-grid">
+        <div><strong>18</strong><span>widget designs</span></div>
+        <div><strong>6</strong><span>widget sizes</span></div>
+        <div><strong>5</strong><span>kids on one board</span></div>
+        <div><strong>0</strong><span>accounts or trackers</span></div>
+      </div>
+    </section>
+
+    <!-- LOCK SCREEN -->
+    <section class="section" id="lock-screen">
+      <div class="container split">
+        <div class="split-copy reveal">
+          <p class="kicker">Made for the Lock Screen</p>
+          <h2>Use it on your Lock Screen, your Home Screen — or both.</h2>
+          <p>Most dads check their phone dozens of times a day. Moonth turns every one of those glances into a tiny reminder of how far your little one has come. Pick a compact Lock Screen widget that sits quietly under the clock, a colorful Home Screen card, or run them side by side.</p>
+          <ul class="checks">
+            <li><b>Rectangular</b> — months, days and name, right under the time.</li>
+            <li><b>Circular</b> — one bold number with a progress ring to the next month.</li>
+            <li><b>Inline</b> — a single line above the clock: <em>Noah · 6 months 15 days</em>.</li>
+            <li><b>Small, Medium &amp; Large</b> — full-color designs for the Home Screen and StandBy.</li>
+          </ul>
+        </div>
+
+        <div class="accessory-stage reveal" aria-label="Lock Screen widget sizes">
+          <div class="acc-clock" aria-hidden="true">
+            <span class="acc-inline">◐ Noah · 6 months 15 days</span>
+            <span class="acc-time">9:41</span>
+          </div>
+          <div class="acc-row">
+            <div class="acc acc-circ" aria-label="Circular widget: 6 months">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" class="ring-bg"/><circle cx="32" cy="32" r="27" class="ring-fg" pathLength="100" stroke-dasharray="50 100"/></svg>
+              <span><b>6</b><i>MO</i></span>
+            </div>
+            <div class="acc acc-rect" aria-label="Rectangular widget: 6 months 15 days, Noah">
+              <span class="ar-num">6</span>
+              <span class="ar-text"><b>months 15 days</b><i>Noah</i></span>
             </div>
           </div>
-        </div>
-        <div class="floating-note note-bottom"><span data-i18n="nextMilestone">Sonraki dönüm noktası</span><strong data-i18n="nextMilestoneValue">13 gün kaldı</strong></div>
-      </div>
-    </section>
-
-    <section class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span data-i18n="marqueeHome">ANA EKRAN</span><i></i><span data-i18n="marqueeLock">KİLİT EKRANI</span><i></i><span>STANDBY</span><i></i><span data-i18n="marqueeThemes">18 WIDGET TEMASI</span><i></i><span data-i18n="marqueeHome">ANA EKRAN</span><i></i><span data-i18n="marqueeLock">KİLİT EKRANI</span><i></i><span>STANDBY</span><i></i><span data-i18n="marqueeThemes">18 WIDGET TEMASI</span><i></i>
-      </div>
-    </section>
-
-    <section class="section widgets-section" id="widgets">
-      <div class="section-heading reveal">
-        <div><span class="section-index">01</span><span class="eyebrow" data-i18n="widgetsEyebrow">Her bakışta yanında</span></div>
-        <h2 data-i18n="widgetsTitle">Yaşını hesaplamak yerine, anı yaşamaya devam edin.</h2>
-        <p data-i18n="widgetsLead">Ay sonları, artık yıllar ve doğum saati Moonth'un işi. Siz yalnızca size uygun görünümü seçin.</p>
-      </div>
-
-      <div class="widget-gallery reveal">
-        <article class="widget-item widget-paper">
-          <div class="widget-canvas">
-            <span class="tape"></span><small>DENİZ</small><strong>20</strong><p data-i18n="sampleAgeCompact">AY 18 GÜN</p><svg aria-hidden="true" viewBox="0 0 120 30"><path d="M2 18c20-12 38 8 57-2s36-7 59 2"/></svg>
+          <div class="acc acc-family" aria-label="Family Board on the Lock Screen: three kids">
+            <span><i style="--c:#38BDF8"></i>Noah<em>6 mo 15 d</em></span>
+            <span><i style="--c:#F59E0B"></i>Ella<em>2 y 4 mo</em></span>
+            <span><i style="--c:#10B981"></i>Leo<em>4 y 1 mo</em></span>
           </div>
-          <h3 data-i18n="themeNotebook">Net Yaş</h3>
-          <p data-i18n="themeNotebookDesc">Sıcak, kişisel ve her duvar kâğıdına uyumlu.</p>
-        </article>
-        <article class="widget-item widget-night">
-          <div class="widget-canvas">
-            <div class="moon-shape"></div><div class="night-stars"></div><small>GÜNEŞ</small><strong>1</strong><p data-i18n="year">YIL</p>
-          </div>
-          <h3 data-i18n="themeNight">İlk Yıl Yıldızları</h3>
-          <p data-i18n="themeNightDesc">İlk yılın her ayını küçük bir yıldızla saklar.</p>
-        </article>
-        <article class="widget-item widget-mile">
-          <div class="widget-canvas">
-            <div class="mile-band" data-i18n="monthTwentyOne">21. AY</div><strong>13</strong><p data-i18n="daysLeft">GÜN KALDI</p><small data-i18n="sampleAge">20 ay 18 gün</small>
-          </div>
-          <h3 data-i18n="themeMilestone">Kilometre Taşı</h3>
-          <p data-i18n="themeMilestoneDesc">Bir sonraki aya kalan zamanı net gösterir.</p>
-        </article>
-      </div>
-
-      <div class="feature-lines reveal">
-        <div><span>18</span><p><strong data-i18n="featureThemes">Farklı tema</strong><small data-i18n="featureThemesDesc">Ana ekran, kilit ekranı ve StandBy için.</small></p></div>
-        <div><span>3</span><p><strong data-i18n="featureFormats">Yaş formatı</strong><small data-i18n="featureFormatsDesc">Ay + gün, hafta + gün veya yıl + ay + gün.</small></p></div>
-        <div><span>∞</span><p><strong data-i18n="featureMoments">Her gün güncel</strong><small data-i18n="featureMomentsDesc">Widget'lar yaş bilgisini kendileri yeniler.</small></p></div>
-      </div>
-    </section>
-
-    <section class="privacy-section" id="privacy">
-      <div class="privacy-shell">
-        <div class="privacy-copy reveal">
-          <span class="section-index">02</span>
-          <div class="privacy-symbol"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.8 2.9 8.3 7 10 4.1-1.7 7-5.2 7-10V6l-7-3Z"/><path d="M9 11v-1a3 3 0 0 1 6 0v1M8 11h8v6H8z"/></svg></div>
-          <h2 data-i18n="privacyTitle">Ailenizin bilgisi, ailenizde kalır.</h2>
-          <p data-i18n="privacyLead">Moonth hesap açmanızı istemez. Bebeğinizin adı, doğum tarihi ve widget tercihleriniz cihazınızda tutulur; reklam veya çapraz uygulama takibi yapılmaz.</p>
-          <a class="text-link text-link-light" href="privacy.html"><span data-i18n="readPrivacy">Gizlilik politikasını okuyun</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></a>
-        </div>
-        <div class="privacy-list reveal">
-          <div><span>01</span><p><strong data-i18n="privacyNoAccount">Hesap yok</strong><small data-i18n="privacyNoAccountDesc">E-posta, parola veya profil oluşturmanız gerekmez.</small></p></div>
-          <div><span>02</span><p><strong data-i18n="privacyLocal">Yerel saklama</strong><small data-i18n="privacyLocalDesc">Aile bilgileri Moonth sunucularına yüklenmez.</small></p></div>
-          <div><span>03</span><p><strong data-i18n="privacyNoAds">Reklam yok</strong><small data-i18n="privacyNoAdsDesc">Üçüncü taraf reklam ve davranış takibi bulunmaz.</small></p></div>
         </div>
       </div>
     </section>
 
-    <section class="section pro-section" id="download">
-      <div class="pro-art reveal" aria-hidden="true">
-        <div class="pro-orbit"></div>
-        <img src="assets/app-icon.png" alt="" width="230" height="230">
-        <span class="pro-stamp">PRO</span>
-      </div>
-      <div class="pro-copy reveal">
-        <span class="section-index">03</span>
-        <span class="eyebrow" data-i18n="proEyebrow">Tek seferlik satın alım</span>
-        <h2 data-i18n="proTitle">Sevdiğiniz görünümü bir kez açın, hep kullanın.</h2>
-        <p data-i18n="proLead">Moonth Pro; tüm Pro widget temalarını, tüm yaş formatlarını ve birden fazla bebek desteğini tek ödemeyle açar. Abonelik yoktur.</p>
-        <ul>
-          <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span data-i18n="proItem1">15 Pro widget teması</span></li>
-          <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span data-i18n="proItem2">Birden fazla bebek profili</span></li>
-          <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span data-i18n="proItem3">Tüm yaş gösterim biçimleri</span></li>
+    <!-- THEMES -->
+    <section class="section section-alt" id="themes">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">18 widget designs</p>
+          <h2>A look for every kind of dad.</h2>
+          <p>Minimal, nerdy, sporty or soft — every design adapts to light and dark mode, and works on the Home Screen, Lock Screen and StandBy. Three are free forever.</p>
+        </div>
+
+        <ul class="theme-grid" role="list">
+          <li class="theme reveal">
+            <div class="tw tw-sketch" aria-hidden="true">
+              <div class="tw-top"><span>Noah</span><span class="tag">TODAY</span></div>
+              <div class="tw-age">6 months<br>15 days</div>
+              <div class="tw-line"></div>
+              <div class="tw-top small"><span>to month 7</span><span class="amber">16 d</span></div>
+            </div>
+            <p><b>Clear Age</b><span class="free">Free</span></p>
+          </li>
+          <li class="theme reveal">
+            <div class="tw tw-bignum" aria-hidden="true">
+              <span class="n">6</span><span class="s">months 15 days</span><span class="nm">Noah</span>
+            </div>
+            <p><b>Big Number</b><span class="free">Free</span></p>
+          </li>
+          <li class="theme reveal">
+            <div class="tw tw-night" aria-hidden="true">
+              <span class="moon"></span>
+              <span class="stars"></span>
+              <span class="age">6 months 15 days</span><span class="nm">Noah</span>
+            </div>
+            <p><b>Night Lamp</b><span class="free">Free</span></p>
+          </li>
+          <li class="theme reveal">
+            <div class="tw tw-score" aria-hidden="true">
+              <span class="lbl">SCORE: NOAH</span>
+              <span class="cells"><span><i>MO</i>06</span><span><i>DAY</i>15</span><span><i>HR</i>09</span></span>
+            </div>
+            <p><b>Scoreboard</b><span class="pro">Pro</span></p>
+          </li>
+          <li class="theme reveal">
+            <div class="tw tw-term" aria-hidden="true">
+              <span class="dim">&gt; baby.age</span>
+              <span class="hl">6 months 15 days_</span>
+              <span class="dim">&gt; next_month: 16 d</span>
+              <span class="dim">&gt; user: noah</span>
+            </div>
+            <p><b>Terminal</b><span class="pro">Pro</span></p>
+          </li>
+          <li class="theme reveal">
+            <div class="tw tw-pixel" aria-hidden="true">
+              <span class="lvl">LEVEL 0</span>
+              <span class="who">NOAH</span>
+              <span class="xp"><span style="--p:54%"></span></span>
+              <span class="xpt">197 / 365 XP</span>
+            </div>
+            <p><b>Level Up</b><span class="pro">Pro</span></p>
+          </li>
+          <li class="theme reveal">
+            <div class="tw tw-paper" aria-hidden="true">
+              <span class="brk">BREAKING</span>
+              <span class="head">NOAH TURNS 6 MONTHS!</span>
+              <span class="rule"></span>
+              <span class="sub">Night-shift report: all quiet.</span>
+            </div>
+            <p><b>Newspaper</b><span class="pro">Pro</span></p>
+          </li>
+          <li class="theme reveal">
+            <div class="tw tw-clouds" aria-hidden="true">
+              <span class="sun"></span><span class="cl c1"></span><span class="cl c2"></span>
+              <span class="pill">☁ Noah</span>
+              <span class="age"><b>6</b> mo <b>15</b> d</span>
+            </div>
+            <p><b>Pastel Clouds</b><span class="pro">Pro</span></p>
+          </li>
+          <li class="theme reveal">
+            <div class="tw tw-growth" aria-hidden="true">
+              <span class="pill">🌿 NOAH</span>
+              <span class="age"><b>6</b> MO <em>+15 d</em></span>
+              <span class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></span>
+            </div>
+            <p><b>Growth Rings</b><span class="pro">Pro</span></p>
+          </li>
+          <li class="theme reveal">
+            <div class="tw tw-orbit" aria-hidden="true">
+              <span class="disc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" class="o-bg"/><circle cx="32" cy="32" r="28" class="o-fg" pathLength="100" stroke-dasharray="50 100"/></svg><b>6</b></span>
+              <span class="who">NOAH</span><span class="d">15 days</span>
+            </div>
+            <p><b>Moonth Orbit</b><span class="pro">Pro</span></p>
+          </li>
+          <li class="theme reveal">
+            <div class="tw tw-pitch" aria-hidden="true">
+              <span class="lines"></span>
+              <span class="n">6</span><span class="s">MO · 15 DAYS</span><span class="ball">⚽</span>
+            </div>
+            <p><b>Football Pitch</b><span class="pro">Pro</span></p>
+          </li>
+          <li class="theme reveal">
+            <div class="tw tw-family" aria-hidden="true">
+              <span class="fh">FAMILY BOARD <em>3</em></span>
+              <span class="fr"><i style="--c:#38BDF8"></i>Noah<em>6 mo</em></span>
+              <span class="fr"><i style="--c:#F59E0B"></i>Ella<em>2 y 4 mo</em></span>
+              <span class="fr"><i style="--c:#10B981"></i>Leo<em>4 y 1 mo</em></span>
+            </div>
+            <p><b>Family Board</b><span class="pro">Pro</span></p>
+          </li>
         </ul>
-        <div class="release-note"><span></span><p><strong data-i18n="comingSoon">App Store'da yakında</strong><small data-i18n="comingSoonDesc">Moonth şu anda yayına hazırlanıyor.</small></p></div>
+        <p class="more-note">Plus Bottle, Medal, Toy Blocks, Passport Stamp, Milestone and First-Year Stars.</p>
       </div>
     </section>
 
-    <section class="section faq-section" id="questions">
-      <div class="faq-heading reveal">
-        <span class="section-index">04</span>
-        <h2 data-i18n="faqTitle">Kısa cevaplar.</h2>
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Set up in under a minute</p>
+          <h2>Three steps. Following Apple's own guide.</h2>
+          <p>Moonth walks you through it inside the app, with a live preview of your baby's name and age. Here's the short version.</p>
+        </div>
+
+        <div class="how-grid">
+          <article class="how-card reveal">
+            <header><span class="how-icon" aria-hidden="true">🔒</span><h3>On the Lock Screen</h3></header>
+            <ol>
+              <li><b>Touch and hold the Lock Screen</b> until <em>Customize</em> appears, then tap <em>Customize → Lock Screen</em>.</li>
+              <li><b>Tap the widget area</b> under the clock (<em>Add Widgets</em>).</li>
+              <li><b>Choose Moonth</b>, pick rectangular, circular or inline, then tap <em>Done</em>.</li>
+            </ol>
+          </article>
+          <article class="how-card reveal">
+            <header><span class="how-icon" aria-hidden="true">📱</span><h3>On the Home Screen</h3></header>
+            <ol>
+              <li><b>Touch and hold an empty spot</b> until the app icons start to jiggle.</li>
+              <li><b>Tap <em>Edit</em> → <em>Add Widget</em></b> (or <em>+</em>) in the top-left corner.</li>
+              <li><b>Find Moonth</b>, choose Small, Medium or Large, and tap <em>Add Widget</em>.</li>
+            </ol>
+          </article>
+        </div>
+
+        <!-- Live calculator -->
+        <div class="calc reveal" id="try">
+          <div class="calc-copy">
+            <p class="kicker">Try the math</p>
+            <h3>Real calendar months. Not “30-day” guesses.</h3>
+            <p>Born on January 31st? Moonth knows your baby turns one month old on February 28th — and handles leap years, short months and birth times correctly.</p>
+          </div>
+          <form class="calc-form" onsubmit="return false">
+            <label for="birth">Date of birth</label>
+            <input type="date" id="birth" name="birth" required>
+            <output for="birth" class="calc-out" aria-live="polite">
+              <span class="calc-big" id="calcBig">—</span>
+              <span class="calc-sub" id="calcSub">Pick a date to see the age</span>
+            </output>
+          </form>
+        </div>
       </div>
-      <div class="faq-list reveal">
-        <details>
-          <summary><span data-i18n="faqOneQ">Moonth yaş hesabını nasıl yapıyor?</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary>
-          <p data-i18n="faqOneA">Takvim aylarını esas alır; ay sonu ve artık yıl gibi durumları otomatik olarak doğru biçimde ele alır.</p>
-        </details>
-        <details>
-          <summary><span data-i18n="faqTwoQ">Widget'lar internet olmadan çalışır mı?</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary>
-          <p data-i18n="faqTwoA">Evet. Yaş bilgisi cihazınızda hesaplanır ve widget tarafından düzenli olarak güncellenir.</p>
-        </details>
-        <details>
-          <summary><span data-i18n="faqThreeQ">Moonth Pro abonelik mi?</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary>
-          <p data-i18n="faqThreeA">Hayır. Moonth Pro tek seferlik, yenilenmeyen bir uygulama içi satın alımdır.</p>
-        </details>
+    </section>
+
+    <!-- FAMILY -->
+    <section class="section section-alt" id="family">
+      <div class="container split split-rev">
+        <div class="family-visual reveal" aria-hidden="true">
+          <div class="tw tw-family tw-family-lg">
+            <span class="fh">FAMILY BOARD <em>5 kids</em></span>
+            <span class="fr"><i style="--c:#38BDF8"></i>Noah<em>6 mo 15 d</em></span>
+            <span class="fr"><i style="--c:#F59E0B"></i>Ella<em>2 y 4 mo</em></span>
+            <span class="fr"><i style="--c:#10B981"></i>Leo<em>4 y 1 mo</em></span>
+            <span class="fr"><i style="--c:#818CF8"></i>Mia<em>6 y 8 mo</em></span>
+            <span class="fr"><i style="--c:#FB7185"></i>Sam<em>9 y 2 mo</em></span>
+          </div>
+        </div>
+        <div class="split-copy reveal">
+          <p class="kicker">More than one?</p>
+          <h2>Up to five kids. One widget.</h2>
+          <p>Family Board lists every child with their own color and age — on the Home Screen and on the Lock Screen. Add a second baby, and the board grows with your family automatically.</p>
+          <ul class="checks">
+            <li>Separate profile, name and birthday for each child</li>
+            <li>Different design per widget, if you like</li>
+            <li>Lock Screen version fits all of them in one glance</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section class="section" id="privacy">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Private by design</p>
+          <h2>Your family stays on your phone.</h2>
+          <p>Moonth was built so that nothing about your child ever needs to leave your device.</p>
+        </div>
+        <div class="privacy-grid">
+          <div class="pcard reveal"><span aria-hidden="true">👤</span><h3>No account</h3><p>No sign-up, no email, no password. Open the app and add a name and birthday — that's it.</p></div>
+          <div class="pcard reveal"><span aria-hidden="true">📵</span><h3>Works offline</h3><p>Ages are calculated on your iPhone, inside the widget itself. No internet required, ever.</p></div>
+          <div class="pcard reveal"><span aria-hidden="true">🚫</span><h3>No ads, no tracking</h3><p>No third-party analytics, no advertising SDKs, no cross-app tracking.</p></div>
+          <div class="pcard reveal"><span aria-hidden="true">🔔</span><h3>Gentle reminders</h3><p>Optional, local notifications on every month-iversary. Only if you say yes.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section section-alt" id="pricing">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Simple pricing</p>
+          <h2>Free to start. Pro once, forever.</h2>
+          <p>No subscription. One purchase unlocks everything — including every design we add later.</p>
+        </div>
+        <div class="price-grid">
+          <div class="price reveal">
+            <h3>Free</h3>
+            <p class="price-tag">$0</p>
+            <ul>
+              <li>1 baby profile</li>
+              <li>3 widget designs</li>
+              <li>Lock Screen &amp; Home Screen widgets</li>
+              <li>Monthly reminders</li>
+            </ul>
+          </div>
+          <div class="price price-pro reveal">
+            <span class="badge">Lifetime</span>
+            <h3>Moonth Pro</h3>
+            <p class="price-tag">One-time</p>
+            <ul>
+              <li>Up to 5 kids &amp; Family Board</li>
+              <li>All 18 widget designs</li>
+              <li>Every Lock Screen &amp; StandBy style</li>
+              <li>All age formats (weeks, total days, years…)</li>
+              <li>Future designs included</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container narrow">
+        <div class="section-head reveal">
+          <p class="kicker">Questions</p>
+          <h2>Good to know</h2>
+        </div>
+        <div class="faq">
+          <details name="faq">
+            <summary>Does the widget update on its own?</summary>
+            <p>Yes. The widget recalculates the age from the birth date every time iOS refreshes it, so it rolls over to the next day — and the next month — without you opening the app.</p>
+          </details>
+          <details name="faq">
+            <summary>Can I use it only on the Lock Screen?</summary>
+            <p>Absolutely. Lock Screen and Home Screen widgets are independent. Use one, the other, or both.</p>
+          </details>
+          <details name="faq">
+            <summary>How is the age calculated?</summary>
+            <p>Moonth uses real calendar months. If the birth day doesn't exist in a shorter month (like the 31st), the month-iversary is clamped to the last day of that month. Leap days are handled too.</p>
+          </details>
+          <details name="faq">
+            <summary>Which iPhones are supported?</summary>
+            <p>Any iPhone running iOS 16 or later. Lock Screen widgets need iOS 16+, StandBy needs iOS 17+.</p>
+          </details>
+          <details name="faq">
+            <summary>Is Pro a subscription?</summary>
+            <p>No. Moonth Pro is a single, one-time purchase handled by Apple. You can restore it on any of your devices.</p>
+          </details>
+          <details name="faq">
+            <summary>Where is my data stored?</summary>
+            <p>Only on your iPhone, inside the app and its widget container. Deleting the app deletes the data. Read the full <a href="privacy.html">Privacy Policy</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final">
+      <div class="container final-inner reveal">
+        <img src="assets/app-icon-256.png" alt="" width="88" height="88" loading="lazy">
+        <h2>Never do the month math again.</h2>
+        <p>Moonth is coming soon to the App Store.</p>
+        <a class="store-badge" href="#download" aria-label="Coming soon on the App Store">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.78.74 2.99.72 1.24-.02 2.02-1.12 2.77-2.23.88-1.28 1.24-2.52 1.26-2.59-.03-.01-2.4-.92-2.41-3.68ZM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28Z"/></svg>
+          <span><small>Coming soon on the</small><strong>App Store</strong></span>
+        </a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-brand"><img src="assets/app-icon.png" alt="" width="54" height="54"><div><strong>Moonth</strong><span data-i18n="footerTagline">Bebeğinizin yaşı, her an yanınızda.</span></div></div>
-    <div class="footer-links">
-      <a href="privacy.html" data-i18n="footerPrivacy">Gizlilik</a>
-      <a href="terms.html" data-i18n="footerTerms">Kullanım Koşulları</a>
-      <a href="#top" data-i18n="backTop">Başa dön</a>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#top"><img src="assets/app-icon-256.png" alt="" width="28" height="28" loading="lazy"><span>Moonth</span></a>
+      <nav aria-label="Legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </nav>
+      <p>© <span id="year">2026</span> Moonth. Made with care for new parents.</p>
     </div>
-    <p>© <span id="year">2026</span> Moonth</p>
   </footer>
 </body>
 </html>
