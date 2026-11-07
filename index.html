@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f2e7">
+  <meta name="description" content="Moonth, bebeğinizin yaşını takvimsel olarak hesaplar ve ana ekran ile kilit ekranı widget'larında gösterir.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Moonth — Bebeğinizin yaşı, her an yanınızda">
+  <meta property="og:description" content="Takvimsel yaş, güzel widget'lar ve özel anlar. Hesap açmadan, verileriniz cihazınızda kalır.">
+  <meta property="og:image" content="assets/app-icon.png">
+  <meta property="og:locale" content="tr_TR">
+  <title>Moonth — Baby Month Counter</title>
+  <link rel="icon" href="assets/app-icon.png">
+  <link rel="apple-touch-icon" href="assets/app-icon.png">
+  <link rel="stylesheet" href="styles.css?v=3">
+  <script src="script.js?v=4" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">İçeriğe geç</a>
+
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Ana menü">
+      <a class="brand" href="#top" aria-label="Moonth ana sayfa">
+        <img src="assets/app-icon.png" alt="" width="42" height="42">
+        <span>Moonth</span>
+      </a>
+      <div class="nav-links">
+        <a href="#widgets" data-i18n="navWidgets">Widget'lar</a>
+        <a href="#privacy" data-i18n="navPrivacy">Gizlilik</a>
+        <a href="#questions" data-i18n="navQuestions">Sorular</a>
+      </div>
+      <div class="language-switch" role="group" aria-label="Dil seçimi">
+        <button class="language-button is-active" type="button" data-language="tr" aria-pressed="true">TR</button>
+        <button class="language-button" type="button" data-language="en" aria-pressed="false">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="eyebrow-mark"></span><span data-i18n="eyebrow">iPhone ve iPad için</span></div>
+        <h1 data-i18n="heroTitle">Büyürken geçen zamanı, ana ekranınızda görün.</h1>
+        <p class="hero-lead" data-i18n="heroLead">Moonth, bebeğinizin takvimsel yaşını doğru hesaplar; ana ekran, kilit ekranı ve StandBy widget'larında sakin ve anlaşılır biçimde gösterir.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#download">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15.2 5.4c.8-1 1.3-2.3 1.2-3.6-1.2.1-2.6.8-3.4 1.8-.7.8-1.3 2.1-1.2 3.3 1.3.1 2.6-.6 3.4-1.5ZM19.6 13.1c0-3.1 2.6-4.6 2.7-4.7-1.5-2.2-3.8-2.5-4.6-2.5-2-.2-3.8 1.1-4.8 1.1-1 0-2.5-1.1-4.1-1-2.1 0-4.1 1.2-5.2 3.1-2.2 3.8-.6 9.5 1.6 12.6 1.1 1.5 2.3 3.2 4 3.1 1.6-.1 2.2-1 4.2-1 1.9 0 2.5 1 4.2 1 1.7 0 2.8-1.5 3.9-3.1 1.2-1.8 1.7-3.5 1.7-3.6-.1 0-3.6-1.4-3.6-5Z"/></svg>
+            <span><small data-i18n="downloadLabel">App Store'da</small><strong data-i18n="downloadText">Yakında</strong></span>
+          </a>
+          <a class="text-link" href="#widgets"><span data-i18n="explore">Widget'ları keşfet</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></a>
+        </div>
+        <div class="trust-line" aria-label="Ürün özellikleri">
+          <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.8 2.9 8.3 7 10 4.1-1.7 7-5.2 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="trustPrivate">Hesap gerektirmez</span></span>
+          <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></svg><span data-i18n="trustIos">iOS 16 ve üzeri</span></span>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="Moonth uygulama ve widget önizlemesi">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="floating-note note-top"><span data-i18n="noteAge">Bugün</span><strong data-i18n="sampleAge">20 ay 18 gün</strong></div>
+        <div class="phone" role="img" aria-label="Moonth uygulama ekranı">
+          <div class="phone-speaker"></div>
+          <div class="phone-screen">
+            <div class="phone-status"><span>9:41</span><span class="status-symbols"><i></i><i></i><i></i></span></div>
+            <div class="app-head"><div><span data-i18n="greeting">Merhaba</span><strong>Deniz</strong></div><div class="round-control"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M7 4v6M17 14v6"/></svg></div></div>
+            <div class="age-paper">
+              <span data-i18n="ageLabel">Bugünkü yaşı</span>
+              <strong>20 <em data-i18n="months">ay</em></strong>
+              <p>18 <span data-i18n="days">gün</span></p>
+              <svg class="paper-line" aria-hidden="true" viewBox="0 0 180 30"><path d="M3 20c30-15 50 7 78-4s49-8 96 1"/></svg>
+            </div>
+            <div class="mini-title"><strong data-i18n="selectedWidget">Seçili widget</strong><span data-i18n="edit">Düzenle</span></div>
+            <div class="widget-preview">
+              <div class="star star-a"></div><div class="star star-b"></div><div class="star star-c"></div>
+              <span>DENİZ</span><strong>20</strong><p data-i18n="sampleAgeCompact"><b>AY</b> 18 GÜN</p>
+            </div>
+          </div>
+        </div>
+        <div class="floating-note note-bottom"><span data-i18n="nextMilestone">Sonraki dönüm noktası</span><strong data-i18n="nextMilestoneValue">13 gün kaldı</strong></div>
+      </div>
+    </section>
+
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span data-i18n="marqueeHome">ANA EKRAN</span><i></i><span data-i18n="marqueeLock">KİLİT EKRANI</span><i></i><span>STANDBY</span><i></i><span data-i18n="marqueeThemes">18 WIDGET TEMASI</span><i></i><span data-i18n="marqueeHome">ANA EKRAN</span><i></i><span data-i18n="marqueeLock">KİLİT EKRANI</span><i></i><span>STANDBY</span><i></i><span data-i18n="marqueeThemes">18 WIDGET TEMASI</span><i></i>
+      </div>
+    </section>
+
+    <section class="section widgets-section" id="widgets">
+      <div class="section-heading reveal">
+        <div><span class="section-index">01</span><span class="eyebrow" data-i18n="widgetsEyebrow">Her bakışta yanında</span></div>
+        <h2 data-i18n="widgetsTitle">Yaşını hesaplamak yerine, anı yaşamaya devam edin.</h2>
+        <p data-i18n="widgetsLead">Ay sonları, artık yıllar ve doğum saati Moonth'un işi. Siz yalnızca size uygun görünümü seçin.</p>
+      </div>
+
+      <div class="widget-gallery reveal">
+        <article class="widget-item widget-paper">
+          <div class="widget-canvas">
+            <span class="tape"></span><small>DENİZ</small><strong>20</strong><p data-i18n="sampleAgeCompact">AY 18 GÜN</p><svg aria-hidden="true" viewBox="0 0 120 30"><path d="M2 18c20-12 38 8 57-2s36-7 59 2"/></svg>
+          </div>
+          <h3 data-i18n="themeNotebook">Net Yaş</h3>
+          <p data-i18n="themeNotebookDesc">Sıcak, kişisel ve her duvar kâğıdına uyumlu.</p>
+        </article>
+        <article class="widget-item widget-night">
+          <div class="widget-canvas">
+            <div class="moon-shape"></div><div class="night-stars"></div><small>GÜNEŞ</small><strong>1</strong><p data-i18n="year">YIL</p>
+          </div>
+          <h3 data-i18n="themeNight">İlk Yıl Yıldızları</h3>
+          <p data-i18n="themeNightDesc">İlk yılın her ayını küçük bir yıldızla saklar.</p>
+        </article>
+        <article class="widget-item widget-mile">
+          <div class="widget-canvas">
+            <div class="mile-band" data-i18n="monthTwentyOne">21. AY</div><strong>13</strong><p data-i18n="daysLeft">GÜN KALDI</p><small data-i18n="sampleAge">20 ay 18 gün</small>
+          </div>
+          <h3 data-i18n="themeMilestone">Kilometre Taşı</h3>
+          <p data-i18n="themeMilestoneDesc">Bir sonraki aya kalan zamanı net gösterir.</p>
+        </article>
+      </div>
+
+      <div class="feature-lines reveal">
+        <div><span>18</span><p><strong data-i18n="featureThemes">Farklı tema</strong><small data-i18n="featureThemesDesc">Ana ekran, kilit ekranı ve StandBy için.</small></p></div>
+        <div><span>3</span><p><strong data-i18n="featureFormats">Yaş formatı</strong><small data-i18n="featureFormatsDesc">Ay + gün, hafta + gün veya yıl + ay + gün.</small></p></div>
+        <div><span>∞</span><p><strong data-i18n="featureMoments">Her gün güncel</strong><small data-i18n="featureMomentsDesc">Widget'lar yaş bilgisini kendileri yeniler.</small></p></div>
+      </div>
+    </section>
+
+    <section class="privacy-section" id="privacy">
+      <div class="privacy-shell">
+        <div class="privacy-copy reveal">
+          <span class="section-index">02</span>
+          <div class="privacy-symbol"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.8 2.9 8.3 7 10 4.1-1.7 7-5.2 7-10V6l-7-3Z"/><path d="M9 11v-1a3 3 0 0 1 6 0v1M8 11h8v6H8z"/></svg></div>
+          <h2 data-i18n="privacyTitle">Ailenizin bilgisi, ailenizde kalır.</h2>
+          <p data-i18n="privacyLead">Moonth hesap açmanızı istemez. Bebeğinizin adı, doğum tarihi ve widget tercihleriniz cihazınızda tutulur; reklam veya çapraz uygulama takibi yapılmaz.</p>
+          <a class="text-link text-link-light" href="privacy.html"><span data-i18n="readPrivacy">Gizlilik politikasını okuyun</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></a>
+        </div>
+        <div class="privacy-list reveal">
+          <div><span>01</span><p><strong data-i18n="privacyNoAccount">Hesap yok</strong><small data-i18n="privacyNoAccountDesc">E-posta, parola veya profil oluşturmanız gerekmez.</small></p></div>
+          <div><span>02</span><p><strong data-i18n="privacyLocal">Yerel saklama</strong><small data-i18n="privacyLocalDesc">Aile bilgileri Moonth sunucularına yüklenmez.</small></p></div>
+          <div><span>03</span><p><strong data-i18n="privacyNoAds">Reklam yok</strong><small data-i18n="privacyNoAdsDesc">Üçüncü taraf reklam ve davranış takibi bulunmaz.</small></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pro-section" id="download">
+      <div class="pro-art reveal" aria-hidden="true">
+        <div class="pro-orbit"></div>
+        <img src="assets/app-icon.png" alt="" width="230" height="230">
+        <span class="pro-stamp">PRO</span>
+      </div>
+      <div class="pro-copy reveal">
+        <span class="section-index">03</span>
+        <span class="eyebrow" data-i18n="proEyebrow">Tek seferlik satın alım</span>
+        <h2 data-i18n="proTitle">Sevdiğiniz görünümü bir kez açın, hep kullanın.</h2>
+        <p data-i18n="proLead">Moonth Pro; tüm Pro widget temalarını, tüm yaş formatlarını ve birden fazla bebek desteğini tek ödemeyle açar. Abonelik yoktur.</p>
+        <ul>
+          <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span data-i18n="proItem1">15 Pro widget teması</span></li>
+          <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span data-i18n="proItem2">Birden fazla bebek profili</span></li>
+          <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span data-i18n="proItem3">Tüm yaş gösterim biçimleri</span></li>
+        </ul>
+        <div class="release-note"><span></span><p><strong data-i18n="comingSoon">App Store'da yakında</strong><small data-i18n="comingSoonDesc">Moonth şu anda yayına hazırlanıyor.</small></p></div>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="questions">
+      <div class="faq-heading reveal">
+        <span class="section-index">04</span>
+        <h2 data-i18n="faqTitle">Kısa cevaplar.</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details>
+          <summary><span data-i18n="faqOneQ">Moonth yaş hesabını nasıl yapıyor?</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p data-i18n="faqOneA">Takvim aylarını esas alır; ay sonu ve artık yıl gibi durumları otomatik olarak doğru biçimde ele alır.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="faqTwoQ">Widget'lar internet olmadan çalışır mı?</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p data-i18n="faqTwoA">Evet. Yaş bilgisi cihazınızda hesaplanır ve widget tarafından düzenli olarak güncellenir.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="faqThreeQ">Moonth Pro abonelik mi?</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p data-i18n="faqThreeA">Hayır. Moonth Pro tek seferlik, yenilenmeyen bir uygulama içi satın alımdır.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><img src="assets/app-icon.png" alt="" width="54" height="54"><div><strong>Moonth</strong><span data-i18n="footerTagline">Bebeğinizin yaşı, her an yanınızda.</span></div></div>
+    <div class="footer-links">
+      <a href="privacy.html" data-i18n="footerPrivacy">Gizlilik</a>
+      <a href="terms.html" data-i18n="footerTerms">Kullanım Koşulları</a>
+      <a href="#top" data-i18n="backTop">Başa dön</a>
+    </div>
+    <p>© <span id="year">2026</span> Moonth</p>
+  </footer>
+</body>
+</html>
