@@ -1,118 +1,185 @@
 <!doctype html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Moonth Privacy Policy</title>
-  <link rel="icon" href="assets/app-icon-256.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Moonth uygulamasının gizlilik politikası ve veri işleme uygulamaları.">
+  <title>Moonth Gizlilik Politikası · Privacy Policy</title>
+  <link rel="icon" href="assets/app-icon.png">
   <style>
     :root {
-      color-scheme: dark light;
-      --bg: #0b0f19;
-      --surface: #121826;
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --amber: #f59e0b;
-      --border: rgba(255, 255, 255, 0.1);
-      font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --paper: #f8f2e8; --ink: #27231f; --muted: #5f574f;
+      --accent: #b94f43; --line: rgba(39,35,31,.14); --card: rgba(255,255,255,.46);
     }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); }
+    main { width: min(780px, calc(100% - 40px)); margin: 0 auto; padding: 48px 0 88px; }
+    h1 { margin: 0 0 10px; font-size: clamp(2.25rem, 8vw, 4.2rem); line-height: .98; letter-spacing: -.055em; }
+    h2 { margin: 42px 0 12px; font-size: 1.24rem; letter-spacing: -.015em; }
+    p, li, td, th { line-height: 1.68; }
+    p, li, td { color: var(--muted); }
+    a { color: inherit; text-underline-offset: 3px; }
+    a:hover { color: var(--accent); }
+    .back { display: inline-flex; margin-bottom: 44px; font-weight: 700; text-decoration: none; }
+    .eyebrow { color: var(--accent); font-size: .78rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    .meta { margin: 0 0 34px; font-size: .92rem; }
+    .summary { margin: 28px 0 38px; padding: 22px 24px; border: 1px solid var(--line); border-radius: 20px; background: var(--card); }
+    .summary strong { display: block; margin-bottom: 8px; }
+    .summary p { margin: 0; }
+    .language-nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 42px; }
+    .language-nav a { padding: 9px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: .88rem; font-weight: 700; text-decoration: none; }
+    .language-nav a:first-child { background: var(--ink); color: var(--paper); }
+    .policy + .policy { margin-top: 80px; padding-top: 72px; border-top: 1px solid var(--line); }
+    .table-wrap { overflow-x: auto; margin: 18px 0 30px; border: 1px solid var(--line); border-radius: 16px; }
+    table { width: 100%; min-width: 620px; border-collapse: collapse; }
+    th, td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    th { font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; }
+    tr:last-child td { border-bottom: 0; }
+    footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--line); font-size: .86rem; }
+    @media (prefers-color-scheme: dark) {
+      :root { --paper: #171614; --ink: #f6efe5; --muted: #c9c0b5; --accent: #ee9b8f; --line: rgba(255,255,255,.14); --card: rgba(255,255,255,.045); }
     }
-    main {
-      width: min(720px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 64px 0 80px;
-    }
-    h1 {
-      margin: 0 0 8px;
-      font-size: clamp(2rem, 7vw, 3.2rem);
-      letter-spacing: -.04em;
-      font-weight: 800;
-    }
-    h2 {
-      margin-top: 36px;
-      font-size: 1.3rem;
-      font-weight: 700;
-      letter-spacing: -.02em;
-    }
-    p, li {
-      color: var(--muted);
-      font-size: 1.02rem;
-    }
-    .eyebrow {
-      color: var(--amber);
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      margin-bottom: 8px;
-    }
-    .meta {
-      margin-bottom: 40px;
-      font-size: .9rem;
-      color: var(--muted);
-    }
-    a {
-      color: var(--amber);
-      text-underline-offset: 3px;
-    }
-    .back {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 36px;
-      font-weight: 700;
-      color: var(--text);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .back:hover {
-      color: var(--amber);
-    }
+    @media (max-width: 600px) { main { padding-top: 32px; } .back { margin-bottom: 36px; } .summary { padding: 19px; } }
   </style>
 </head>
 <body>
   <main>
-    <a class="back" href="index.html">← Back to Moonth</a>
-    <div class="eyebrow">Moonth</div>
-    <h1>Privacy Policy</h1>
-    <p class="meta">Effective November 2, 2026</p>
+    <a class="back" href="index.html">← Moonth ana sayfası</a>
+    <div class="eyebrow">Moonth · Bebek Aylık Yaş Takibi</div>
+    <h1>Gizlilik Politikası</h1>
+    <p class="meta">Yürürlük tarihi: 7 Kasım 2026 · Son güncelleme: 7 Kasım 2026</p>
 
-    <p>Moonth helps parents and caregivers see a baby’s age and milestones in the app and in iOS widgets. We designed Moonth to keep personal family information on the user’s device whenever possible.</p>
+    <nav class="language-nav" aria-label="Dil seçimi">
+      <a href="#turkce">Türkçe</a>
+      <a href="#english">English</a>
+    </nav>
 
-    <h2>Information stored on your device</h2>
-    <p>Moonth stores the information you enter—such as a baby’s display name, date of birth, optional birth time, widget preferences, age format, theme selection, and notification preferences—locally on your device and in the app’s shared iOS container used by its widgets. Moonth does not require an account and does not upload this family information to a Moonth-operated server.</p>
+    <section class="policy" id="turkce" lang="tr">
+      <div class="summary">
+        <strong>Kısa özet</strong>
+        <p>Moonth hesap açmanızı istemez. Bebeğin adı ve doğum bilgileri Moonth sunucularına gönderilmez; cihazınızda ve widget’ların kullandığı güvenli iOS App Group alanında saklanır. Uygulamada reklam veya uygulamalar arası takip yoktur. Satın alma işlemleri Apple tarafından gerçekleştirilir ve Pro erişiminin doğrulanmasında RevenueCat kullanılır.</p>
+      </div>
 
-    <h2>Purchases</h2>
-    <p>When you purchase or restore Moonth Pro, Apple processes the transaction. RevenueCat helps the app retrieve product information and verify purchase entitlement. Apple and RevenueCat may process transaction identifiers, an app user identifier, product and entitlement information, and limited device or app metadata needed to provide and secure purchases. Moonth does not receive your full payment-card details. Their handling of this information is described in <a href="https://www.apple.com/legal/privacy/">Apple’s Privacy Policy</a> and <a href="https://www.revenuecat.com/privacy/">RevenueCat’s Privacy Policy</a>.</p>
+      <p>Bu Gizlilik Politikası, Moonth mobil uygulamasını ve iOS widget’larını (birlikte “Moonth” veya “Uygulama”) kullandığınızda bilgilerin nasıl işlendiğini açıklar. Moonth, ebeveynlerin ve bakım verenlerin bebeğin takvimsel yaşını, aylık dönüm noktalarını ve kişiselleştirilmiş widget’ları görmesine yardımcı olur.</p>
 
-    <h2>Notifications</h2>
-    <p>If you grant notification permission, Moonth can schedule milestone reminders locally through iOS. Notification permission is optional and can be changed at any time in iOS Settings.</p>
+      <h2>1. İşlenen bilgiler ve amaçları</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Bilgi</th><th>Amaç</th><th>Nerede tutulur?</th></tr></thead>
+          <tbody>
+            <tr><td>Bebeğin görünen adı, doğum tarihi ve isteğe bağlı doğum saati</td><td>Yaşı ve dönüm noktalarını hesaplamak; uygulama ve widget’ları kişiselleştirmek</td><td>Yalnızca cihazınızda ve iOS App Group alanında</td></tr>
+            <tr><td>Widget stili, yaş gösterim biçimi, tema ve bildirim tercihleri</td><td>Seçtiğiniz görünümü, widget’ları ve hatırlatıcıları sunmak</td><td>Yalnızca cihazınızda ve iOS App Group alanında</td></tr>
+            <tr><td>Sınırlı onboarding ve özellik olayları</td><td>Uygulama içindeki akış durumunu korumak ve özelliklerin yerel olarak çalışmasını sağlamak</td><td>Yalnızca cihazınızda; üçüncü taraf analiz servisine gönderilmez</td></tr>
+            <tr><td>Anonim uygulama kullanıcı kimliği, satın alma geçmişi ve işlem/ürün bilgileri</td><td>Moonth Pro satın alımını doğrulamak, geri yüklemek ve dolandırıcılığı önlemek</td><td>Apple ve RevenueCat sistemlerinde</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-    <h2>Analytics, advertising, and tracking</h2>
-    <p>Moonth does not include third-party advertising, cross-app tracking, or a third-party analytics service. Limited onboarding and feature events used by the app are stored locally on the device.</p>
+      <h2>2. Cihazda saklanan aile bilgileri</h2>
+      <p>Moonth’a girdiğiniz bebeğin görünen adı, doğum tarihi, isteğe bağlı doğum saati, widget tercihleri, yaş biçimi, tema ve bildirim tercihleri cihazınızda tutulur. Widget’ların bu bilgilere erişebilmesi için Apple’ın iOS App Group mekanizması kullanılır. Moonth için kullanıcı hesabı oluşturulmaz ve bu aile bilgileri Moonth tarafından işletilen bir sunucuya yüklenmez.</p>
 
-    <h2>Children’s privacy</h2>
-    <p>Moonth is intended for parents and caregivers. We do not knowingly collect personal information directly from children. Information about a child that a parent or caregiver enters remains on the device as described above.</p>
+      <h2>3. Satın almalar ve RevenueCat</h2>
+      <p>Moonth Pro’yu satın aldığınızda veya geri yüklediğinizde ödeme Apple tarafından işlenir. Moonth tam kart numaranızı, Apple Kimliği parolanızı veya ödeme bilgilerinizi görmez.</p>
+      <p>Moonth, ürünleri göstermek ve Pro erişimini doğrulamak için RevenueCat SDK’sını kullanır. Uygulama RevenueCat’e adınızı, e-posta adresinizi veya bebeğinizin bilgilerini göndermez. Hesap açılmadığı için RevenueCat rastgele, anonim bir uygulama kullanıcı kimliği oluşturur. RevenueCat; bu anonim kimliği, cihaz türü ve işletim sistemi gibi sınırlı teknik bilgileri, uygulama sürümünü, ülke/yerel ayarı, zaman damgalarını, Apple makbuzunu ve bu makbuzdan türetilen ürün/işlem bilgilerini satın alma doğrulaması, geri yükleme, güvenlik ve dolandırıcılık önleme amaçlarıyla işleyebilir.</p>
+      <p>Bu hizmetlerin kendi veri uygulamaları için <a href="https://www.apple.com/legal/privacy/">Apple Gizlilik Politikası</a> ile <a href="https://www.revenuecat.com/privacy/">RevenueCat Gizlilik Politikası</a> geçerlidir.</p>
 
-    <h2>Data retention and deletion</h2>
-    <p>You can edit or delete baby profiles in Moonth. Removing the app removes its local app data according to iOS behavior. Purchase records may continue to be retained by Apple and RevenueCat as required to provide purchase history, restoration, fraud prevention, accounting, or legal compliance.</p>
+      <h2>4. Bildirimler</h2>
+      <p>İzin verirseniz Moonth, aylık dönüm noktaları için iOS üzerinden yerel bildirimler planlar. Bildirim içeriği cihazınızda oluşturulur. İzin vermek isteğe bağlıdır; izni iOS Ayarlar’dan dilediğiniz zaman değiştirebilirsiniz.</p>
 
-    <h2>Your choices</h2>
-    <p>You may decline notification permission, avoid entering optional information, edit or delete profiles, and use Apple’s purchase-management tools. Requests concerning Apple or RevenueCat data may also be directed to those providers under their respective privacy policies.</p>
+      <h2>5. Reklam, analiz ve takip</h2>
+      <p>Moonth üçüncü taraf reklam içermez, reklam kimliği kullanmaz, davranışsal profil oluşturmaz ve farklı şirketlere ait uygulamalar veya web siteleri arasında sizi takip etmez. Uygulamada üçüncü taraf analiz hizmeti bulunmaz. RevenueCat yalnızca satın alma altyapısı için kullanılır.</p>
 
-    <h2>Changes to this policy</h2>
-    <p>We may update this policy when Moonth’s features or legal obligations change. The effective date above identifies the current version.</p>
+      <h2>6. Çocukların gizliliği</h2>
+      <p>Moonth çocukların doğrudan kullanımı için değil, ebeveynler ve bakım verenler için tasarlanmıştır. Çocuklardan bilerek doğrudan kişisel bilgi toplamayız. Bir ebeveynin veya bakım verenin girdiği bebek bilgileri yukarıda açıklandığı şekilde cihazda kalır ve Moonth sunucularına gönderilmez.</p>
 
-    <h2>Contact</h2>
-    <p>For privacy questions or requests, contact the developer through Moonth’s App Store support page.</p>
+      <h2>7. Saklama, düzeltme ve silme</h2>
+      <p>Bebek bilgilerini Uygulama içinde değiştirebilir veya silebilirsiniz. Uygulamayı kaldırmak, iOS’un işleyişine uygun biçimde yerel uygulama verilerini cihazdan kaldırır. iCloud veya cihaz yedeğiniz varsa Apple, bu yerel verileri yedekleme ayarlarınıza göre saklayabilir.</p>
+      <p>Apple ve RevenueCat, satın alma ve makbuz kayıtlarını satın alma geçmişi, geri yükleme, muhasebe, dolandırıcılık önleme veya yasal yükümlülükler için gerekli olduğu sürece saklayabilir. Bu sağlayıcılardaki verilerle ilgili talepler, kendi gizlilik politikalarında belirtilen kanallardan doğrudan ilgili sağlayıcıya iletilebilir.</p>
+
+      <h2>8. Veri paylaşımı ve uluslararası aktarım</h2>
+      <p>Moonth aile bilgilerinizi satmaz veya reklam amacıyla paylaşmaz. Satın alma doğrulaması için Apple ve RevenueCat hizmetlerinden yararlanılır. Bu sağlayıcılar verileri faaliyet gösterdikleri ülkelerde, Amerika Birleşik Devletleri dâhil olmak üzere işleyebilir ve uygun yasal/teknik güvenceleri kendi politikaları doğrultusunda uygular.</p>
+
+      <h2>9. Güvenlik</h2>
+      <p>Moonth, aile bilgilerini cihazda tutarak ağ üzerinden gereksiz aktarımı sınırlar ve Apple’ın uygulama sandbox’ı ile App Group mekanizmalarından yararlanır. Bununla birlikte hiçbir saklama veya iletim yöntemi mutlak güvenlik garanti edemez. Cihaz parolası kullanmanızı ve iOS’u güncel tutmanızı öneririz.</p>
+
+      <h2>10. Haklarınız ve tercihleriniz</h2>
+      <p>Bulunduğunuz yere bağlı olarak kişisel verilerinize erişme, bunları düzeltme veya silme, işlemeyi kısıtlama ya da işleme itiraz etme gibi haklarınız olabilir. Moonth hesabı veya Moonth sunucusunda aile verisi bulunmadığından, aile bilgilerinizi doğrudan Uygulama içinden yönetebilirsiniz. Bildirim iznini reddedebilir, isteğe bağlı bilgileri girmeyebilir ve Apple’ın satın alma yönetimi araçlarını kullanabilirsiniz.</p>
+
+      <h2>11. Değişiklikler</h2>
+      <p>Moonth’un özellikleri veya yasal yükümlülükler değiştiğinde bu politika güncellenebilir. Güncel sürüm bu sayfada yayımlanır ve önemli değişikliklerde yürürlük tarihi yenilenir.</p>
+
+      <h2>12. İletişim</h2>
+      <p>Gizlilikle ilgili soru, talep veya şikâyetleriniz için Moonth geliştiricisine <a href="mailto:tekurunal@gmail.com">tekurunal@gmail.com</a> adresinden ulaşabilirsiniz.</p>
+    </section>
+
+    <section class="policy" id="english" lang="en">
+      <div class="eyebrow">English version</div>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Effective: November 7, 2026 · Last updated: November 7, 2026</p>
+
+      <div class="summary">
+        <strong>Summary</strong>
+        <p>Moonth does not require an account. A baby’s name and birth information are not sent to Moonth servers; they remain on your device and in the secure iOS App Group container used by the widgets. Moonth has no advertising or cross-app tracking. Apple processes purchases, and RevenueCat is used to verify Pro access.</p>
+      </div>
+
+      <p>This Privacy Policy explains how information is handled when you use the Moonth mobile application and its iOS widgets (together, “Moonth” or the “App”). Moonth helps parents and caregivers view a baby’s calendar age, monthly milestones, and personalized widgets.</p>
+
+      <h2>1. Information processed and why</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Information</th><th>Purpose</th><th>Where it is stored</th></tr></thead>
+          <tbody>
+            <tr><td>Baby’s display name, date of birth, and optional birth time</td><td>Calculate age and milestones; personalize the App and widgets</td><td>Only on your device and in the iOS App Group container</td></tr>
+            <tr><td>Widget style, age format, theme, and notification preferences</td><td>Provide your selected appearance, widgets, and reminders</td><td>Only on your device and in the iOS App Group container</td></tr>
+            <tr><td>Limited onboarding and feature events</td><td>Preserve in-app flow state and support local app functionality</td><td>Only on your device; not sent to a third-party analytics service</td></tr>
+            <tr><td>Anonymous app user ID, purchase history, and transaction/product information</td><td>Validate and restore Moonth Pro and prevent fraud</td><td>In Apple and RevenueCat systems</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>2. Family information stored on your device</h2>
+      <p>Moonth stores the baby’s display name, date of birth, optional birth time, widget preferences, age format, theme, and notification preferences on your device. Apple’s iOS App Group mechanism allows the widgets to access this information. Moonth does not create a user account and does not upload this family information to a Moonth-operated server.</p>
+
+      <h2>3. Purchases and RevenueCat</h2>
+      <p>When you purchase or restore Moonth Pro, Apple processes the payment. Moonth does not receive your full card number, Apple Account password, or payment credentials.</p>
+      <p>Moonth uses the RevenueCat SDK to display products and verify Pro access. The App does not send your name, email address, or baby information to RevenueCat. Because Moonth does not use accounts, RevenueCat generates a random anonymous App User ID. For purchase validation, restoration, security, and fraud prevention, RevenueCat may process this anonymous identifier; limited technical information such as device type and operating system; app version; country/locale; timestamps; the Apple receipt; and product or transaction information derived from that receipt.</p>
+      <p>The providers’ own practices are governed by <a href="https://www.apple.com/legal/privacy/">Apple’s Privacy Policy</a> and <a href="https://www.revenuecat.com/privacy/">RevenueCat’s Privacy Policy</a>.</p>
+
+      <h2>4. Notifications</h2>
+      <p>If you grant permission, Moonth schedules local iOS notifications for monthly milestones. Notification content is generated on your device. Permission is optional and can be changed at any time in iOS Settings.</p>
+
+      <h2>5. Advertising, analytics, and tracking</h2>
+      <p>Moonth contains no third-party advertising, does not use an advertising identifier, does not create behavioral profiles, and does not track you across apps or websites owned by other companies. The App has no third-party analytics service. RevenueCat is used only for purchase infrastructure.</p>
+
+      <h2>6. Children’s privacy</h2>
+      <p>Moonth is designed for parents and caregivers, not for direct use by children. We do not knowingly collect personal information directly from children. Baby information entered by a parent or caregiver remains on the device as described above and is not sent to Moonth servers.</p>
+
+      <h2>7. Retention, correction, and deletion</h2>
+      <p>You can edit or delete baby information in the App. Uninstalling the App removes local app data from the device according to iOS behavior. If you use iCloud or device backups, Apple may retain local data according to your backup settings.</p>
+      <p>Apple and RevenueCat may retain purchase and receipt records for as long as needed to provide purchase history and restoration, maintain accounting records, prevent fraud, or comply with law. Requests concerning data held by these providers may be directed to them through the channels in their respective privacy policies.</p>
+
+      <h2>8. Sharing and international transfers</h2>
+      <p>Moonth does not sell family information or share it for advertising. Apple and RevenueCat are used for purchase validation. These providers may process information in countries where they operate, including the United States, and apply the legal and technical safeguards described in their policies.</p>
+
+      <h2>9. Security</h2>
+      <p>Moonth limits unnecessary network transmission by keeping family information on the device and uses Apple’s app sandbox and App Group mechanisms. No storage or transmission method can guarantee absolute security. We recommend using a device passcode and keeping iOS up to date.</p>
+
+      <h2>10. Your rights and choices</h2>
+      <p>Depending on your location, you may have rights to access, correct, or delete personal data, restrict processing, or object to processing. Because Moonth has no account or family information on a Moonth server, you can manage family information directly in the App. You may decline notification permission, avoid entering optional information, and use Apple’s purchase-management tools.</p>
+
+      <h2>11. Changes to this policy</h2>
+      <p>We may update this policy when Moonth’s features or legal obligations change. The current version will be published on this page, and the effective date will be updated for material changes.</p>
+
+      <h2>12. Contact</h2>
+      <p>For privacy questions, requests, or complaints, contact the Moonth developer at <a href="mailto:tekurunal@gmail.com">tekurunal@gmail.com</a>.</p>
+    </section>
+
+    <footer>
+      <p>Moonth · Bebek Aylık Yaş Takibi · <a href="terms.html">Kullanım Koşulları / Terms of Use</a></p>
+    </footer>
   </main>
 </body>
 </html>
